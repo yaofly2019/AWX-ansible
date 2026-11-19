@@ -1,0 +1,16 @@
+---
+- name: Get Kubernetes namespaces
+  hosts: yao
+  gather_facts: false
+
+  vars:
+    namespace: default
+
+  tasks:
+    - name: Get pods
+      command: kubectl get pods -n {{ namespace }}
+      register: pods
+
+    - name: Display output
+      debug:
+        var: pods.stdout_lines
