@@ -1,6 +1,5 @@
 ---
 - name: Get Kubernetes namespaces
-  hosts: yao
   gather_facts: false
 
   vars:
