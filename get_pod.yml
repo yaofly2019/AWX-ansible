@@ -8,7 +8,7 @@
 
   tasks:
     - name: Get pods
-      command: kubectl get pods -n {{ namespace }}
+      command: kubectl get pods -n {{ namespace }} && sleep 10
       register: pods
 
     - name: Display output
