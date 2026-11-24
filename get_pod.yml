@@ -8,9 +8,13 @@
 
   tasks:
     - name: Get pods
-      command: kubectl get pods -n {{ namespace }} && sleep 10
+      command: kubectl get pods -n {{ namespace }}
       register: pods
 
+    - name: Wait
+      pause:
+        seconds: 10
+    
     - name: Display output
       debug:
         var: pods.stdout_lines
