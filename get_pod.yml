@@ -1,5 +1,6 @@
 ---
 - name: Get Kubernetes namespaces
+  hosts: all
   gather_facts: false
 
   vars:
